@@ -1,3 +1,3 @@
-# MenuHub-
+# MenuHub
 
 Autor: Juliano Cezar Caetano
