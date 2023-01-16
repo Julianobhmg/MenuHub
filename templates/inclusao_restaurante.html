@@ -1,0 +1,40 @@
+{% extends "application.html" %}
+
+{% block html_attribs %} lang pt_BR="BR"{% endblock %}
+
+{% block title %}TODO{% endblock %}
+{% block content %}
+{% if current_user.is_authenticated %}
+    <form method="post" action="">
+        <h1>{{ current_user.name }}</h1>
+        <label>Restaurante:</label>
+        <input type="text" name="id" placeholder="Insira codigo do restaurante">
+        <input type="text" name="name" placeholder="Insira nome do restaurante">
+        <button type="submit" class="btn btn-primary">Cadastrar</button>
+    </form>
+
+
+    <table class="table table-bordered">
+        <thead class="thead-dark">
+            <tr>
+                <th>Codigo</th>
+                <th>Nome</th>
+                <th>Ação</th>
+            <tr>
+        </thead>
+        <tbody>
+            {% for restaurante in restaurantes %}
+            <tr>
+                <td>{{ restaurante.id }}</td>
+                <td>{{ restaurante.name }}</td>
+   
+                <td class="align-middle actions">
+                    <a class="btn btn-success" href="/restaurante/update/{{restaurante.id}}">Update</a> |
+                    <a class="btn btn-danger"  href="/restaurante/delete/{{restaurante.id}}">Delete</a>
+                 </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>    
+{% endif %}
+{% endblock %}

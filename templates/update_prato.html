@@ -1,0 +1,26 @@
+{% extends "application.html" %}
+
+{% block html_attribs %} lang="pt-BR" {% endblock %}
+
+{% block title %}Update{% endblock %}
+
+{% block content %}
+<div class="container">
+   <div class="page-header">
+      <h1 class="text-center text-primary">Update Prato</h1>
+   </div>
+
+   <form class="form-inline" action="/prato/update/{{prato.id}}" method="POST">
+      <div class="form-group">
+         <label for="description">Prato</label>
+         <input type="text" class="form-control" name="name" id="name" value="{{prato.name}}">
+         <input type="text" class="form-control" name="description" id="description" value="{{prato.description}}">
+         <input type="text" class="form-control" name="category" id="category" value="{{prato.category}}">
+         <input type="text" class="form-control" name="price" id="price" value="{{prato.price}}">
+         <input type="text" class="form-control" name="restaurante" id="restaurante" value="{{prato.restaurante}}">
+         <button type="submit" class="btn btn-primary">Update</button>
+         
+      </div>
+   </form>
+</div>
+{% endblock %}

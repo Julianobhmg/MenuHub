@@ -1,0 +1,21 @@
+{% extends "application.html" %}
+
+{% block html_attribs %} lang="pt-BR" {% endblock %}
+
+{% block title %}Update{% endblock %}
+
+{% block content %}
+<div class="container">
+   <div class="page-header">
+      <h1 class="text-center text-primary">Update Restaurante</h1>
+   </div>
+
+   <form class="form-inline" action="/restaurante/update/{{restaurante.id}}" method="POST">
+      <div class="form-group">
+         <label for="description">Nome do Restaurante</label>
+         <input type="text" class="form-control" name="name" id="name" value="{{restaurante.name}}">
+         <button type="submit" class="btn btn-primary">Atualizar</button>
+      </div>
+   </form>
+</div>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends "application.html" %}
+
+{% block html_attribs %} lang pt_BR="BR"{% endblock %}
+
+{% block title %}TODO{% endblock %}
+{% block content %}
+
+<form action="/"  method="POST">      
+    <h1>{{ current_user.name }}</h1>
+    <label>Nome do Prato:</label><input type="text" name="name" >
+    <button type="submit" class="btn btn-primary">Pesquisar</button>
+</form>
+
+<table class="table table-bordered">
+    <thead class="thead-dark">
+        <tr>
+            <th>Codigo Prato</th>
+            <th>Nome do Prato</th>
+            <th>Descrição</th>
+            <th>Categoria</th>
+            <th>Preço</th>
+            <th>Restaurante</th>
+        <tr>
+    </thead>
+    <tbody>
+        {% for prato in pratos %}
+        <tr>
+            <td>{{ prato.id }}</td>
+            <td>{{ prato.name }}</td>
+            <td>{{ prato.description }}</td>
+            <td>{{ prato.category }}</td>
+            <td>{{ prato.price }}</td>
+            <td>{{ prato.restaurante }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}
