@@ -1,6 +1,6 @@
 # MenuHub
 
-Descrição do projeto
+Projeto desenvolvido em Python com Flask_Login para controlar restaurantes e seus pratos disponíveis.
 
 ## Equipe
 
